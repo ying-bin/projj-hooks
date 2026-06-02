@@ -1,11 +1,11 @@
 # Projj-hooks
 
-Hooks for [Projj](https://github.com/popomore/projj)
+Hooks for [Projj](https://github.com/ying-bin/projj)
 
 ## Usage
 
 ```bash
-$ npm i projj-hooks -g
+$ npm i @ying-bin/projj-hooks -g
 ```
 
 Config it in [hooks](#Hooks)

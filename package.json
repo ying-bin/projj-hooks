@@ -1,6 +1,6 @@
 {
-  "name": "projj-hooks",
-  "version": "1.4.0",
+  "name": "@ying-bin/projj-hooks",
+  "version": "0.0.4",
   "description": "Hooks for Projj",
   "dependencies": {
     "co": "^4.6.0",
@@ -10,28 +10,15 @@
   },
   "devDependencies": {
     "autod": "^2.7.1",
-    "coffee": "^3.3.0",
-    "egg-bin": "^2.2.1",
-    "egg-ci": "^1.1.0",
     "eslint": "^3.16.0",
-    "eslint-config-egg": "^3.2.0",
-    "mm": "^2.1.0",
-    "mz-modules": "^1.0.0",
-    "projj": "^1.2.0"
+    "eslint-config-egg": "^3.2.0"
   },
   "engines": {
     "node": ">=6.0.0"
   },
   "scripts": {
     "autod": "autod",
-    "lint": "eslint .",
-    "test": "npm run lint -- --fix && npm run test-local",
-    "test-local": "egg-bin test",
-    "cov": "egg-bin cov",
-    "ci": "npm run lint && npm run cov"
-  },
-  "ci": {
-    "version": "6"
+    "lint": "eslint ."
   },
   "bin": {
     "clean": "bin/clean.js",
@@ -44,9 +31,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:popomore/projj-hooks.git"
+    "url": "git@github.com:ying-bin/projj-hooks.git"
   },
-  "author": "popomore <sakura9515@gmail.com>",
+  "author": "Nemo <yingbin.jiang@outlook.com>",
   "license": "MIT",
   "files": [
     "bin",
