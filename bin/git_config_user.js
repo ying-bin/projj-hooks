@@ -39,7 +39,7 @@ run(function* () {
 });
 
 function getDomain(cwd) {
-  const m = cwd.match(/([^/]*)\/[^/]*\/[^/]*$/);
+  const m = cwd.match(/([^/\\]*)[/\\][^/\\]*[/\\][^/\\]*$/);
   if (m) {
     return m[1];
   }
