@@ -9,15 +9,14 @@
     "runscript": "^1.2.0"
   },
   "devDependencies": {
-    "autod": "^2.7.1",
-    "eslint": "^3.16.0",
-    "eslint-config-egg": "^3.2.0"
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.4.1",
+    "globals": "^17.6.0"
   },
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=20.0.0"
   },
   "scripts": {
-    "autod": "autod",
     "lint": "eslint ."
   },
   "bin": {
@@ -31,7 +30,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:ying-bin/projj-hooks.git"
+    "url": "git+ssh://git@github.com/ying-bin/projj-hooks.git"
   },
   "author": "Nemo <yingbin.jiang@outlook.com>",
   "license": "MIT",

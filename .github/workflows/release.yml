@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: '版本号 (patch, minor, major 或具体版本如 1.2.3)'
+        description: '版本号 (patch, minor 或 major)'
         required: true
         default: 'patch'
         type: choice
@@ -27,11 +27,11 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
           registry-url: https://registry.npmjs.org/
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
 
       - name: Run Lint
         run: npm run lint

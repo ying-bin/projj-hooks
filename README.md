@@ -1,19 +1,25 @@
-# Projj-hooks
+# @ying-bin/projj-hooks
 
 Hooks for [Projj](https://github.com/ying-bin/projj)
+
+## Requirements
+
+- Node.js >= 20
 
 ## Usage
 
 ```bash
-$ npm i @ying-bin/projj-hooks -g
+npm i @ying-bin/projj-hooks -g
 ```
 
-Config it in [hooks](#Hooks)
+Configure hooks in Projj:
 
 ```json
 {
   "hooks": {
-    "clean": "clean"
+    "clean": "projj_clean",
+    "dirty": "projj_dirty",
+    "git_config_user": "projj_git_config_user"
   }
 }
 ```
@@ -22,9 +28,9 @@ Config it in [hooks](#Hooks)
 
 ### clean
 
-Clean node_modules and ignored git files.
+Clean `node_modules` and ignored git files.
 
-default options
+Default options:
 
 ```json
 {
@@ -40,9 +46,15 @@ default options
 
 ### git_config_user
 
-Add `user.name`, `user.email` and `user.signingkey` for git config
+Set `user.name`, `user.email`, and optionally `user.signingkey` for the current git repository.
 
-options
+The hook picks a config entry by matching the current path domain, for example:
+
+```text
+/path/to/github.com/owner/repo -> github.com
+```
+
+Options:
 
 ```json
 {
@@ -54,18 +66,24 @@ options
       "name": "your name",
       "email": "your email",
       "signingkey": "your signingkey"
+    },
+    "gitlab.com": {
+      "name": "your name",
+      "email": "your email"
     }
   }
 }
 ```
 
+When `signingkey` is set, the hook also enables `commit.gpgsign`.
+
 ### atom_project
 
 Hook for [atom project](https://github.com/danielbrodin/atom-project-manager)
 
-It will generate `projects.cson` from all projj repositories.
+It adds the current repository to `projects.cson`.
 
-options
+Options:
 
 ```json
 {
@@ -80,9 +98,9 @@ options
 
 ### dirty
 
-Check git repository whether dirty or not.
+Check whether the current git repository has uncommitted changes.
 
-options
+Options:
 
 ```json
 {
@@ -96,14 +114,16 @@ options
 
 Hook for [vscode-project-manager](https://github.com/alefragnani/vscode-project-manager)
 
-It will generate `projects.json` from all projj repositories.
+It adds the current repository to `projects.json`.
+
+Options:
 
 ```json
 {
   "hooks": {
     "vscode_project_manager": "projj_vscode_project_manager"
   },
-  "atom_project": {
+  "vscode_project_manager": {
     "setting": "/path/to/projects.json"
   }
 }
